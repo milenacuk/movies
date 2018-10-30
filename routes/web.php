@@ -18,8 +18,14 @@ Route::prefix('movies')->group(function(){
     Route::get('/create', 'MoviesController@create');
     Route::post('/', 'MoviesController@store');
     Route::get('/{id}', 'MoviesController@show'); 
-    Route::get('/', 'MoviesController@index');
-      
-   
+    Route::get('/', 'MoviesController@index'); 
+
+    Route::prefix('/{movie_id}/comments')->group(function(){
+        Route::post('/','CommentsController@store');
+    });
 });
+
+
+
+
 
