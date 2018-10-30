@@ -12,7 +12,7 @@ class Movie extends Model
         'title'=>'required',
         'genre'=>'required',
         'director'=>'required',
-        'year'=>'required|min:1990|max:2018|digits:4',
+        'year'=>'required|digits:4|integer|min:1990|max:2018',
         'storyline' => 'required|max:1000'
     ];
 }

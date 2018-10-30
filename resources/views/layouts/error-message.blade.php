@@ -1,5 +1,5 @@
 @if($errors->has($field))
-<div class = 'alter alter-danger'>
+<div class = 'alert alert-danger'>
     @foreach($errors->get($field) as $error)
         {{ $error }}
         @endforeach
