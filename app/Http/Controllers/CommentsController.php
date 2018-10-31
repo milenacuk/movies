@@ -18,7 +18,8 @@ class CommentsController extends Controller
             );
 
         $movie->comments()->create(request()->all());
-        return redirect('/movies/{$movie_id}');
+        //return redirect('/movies/show/{$movie_id}');
+        return view('movies.show', ['movie'=>$movie]);
         
     }
 }

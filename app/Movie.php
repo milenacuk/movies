@@ -20,4 +20,11 @@ class Movie extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+
+    public function orderByDescending(){
+        return $this->orderBy('created_at','DESC')->get();
+    }
+    public function getGenre($genre){
+        return Movie::where('genre',$genre)->get();
+    }
 }

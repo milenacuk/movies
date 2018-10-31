@@ -5,20 +5,18 @@
 @endsection
 
 @section('storyline')
-
+@if($movies)
     <ul>
     @foreach($movies as $movie)
 
-        <li>
-        <div class="blog-movie">
-                    <h2 class="blog-movie-title">
-                        <a href="/movies/{{$movie->id}}" >
-                        {{$movie->title}}
-                        </a>
-                    </h2>
+        <li>                 
+            <a href="/movies/{{$movie->id}}" >
+                {{$movie->title}}
+            </a>
                    <p> {{ $movie -> storyline }}</p>
-                </div>  
-                </li> 
+                
+</li> 
     @endforeach
     </ul>
+    @endif
 @endsection

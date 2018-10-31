@@ -11,7 +11,7 @@
         <h2 class="blog-movie-title">
             {{ $movie->title }}
         </h2>
-        <p><b>Genre mouvie: </b> {{ $movie->genre }}</p>         
+        <p><b>Genre mouvie: </b><a href="/genres/{{$movie->genre}}">{{ $movie->genre }}</a> </p>         
         <p><b>Year of publication: </b>{{$movie ->year}}</p>
         <p><b>Director: </b>{{ $movie-> director}}</p>
         <p><b>Storyline: </b>{{$movie ->storyline}}</p>

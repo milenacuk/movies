@@ -9,7 +9,8 @@ use App\Comment;
 class MoviesController extends Controller
 {
     public function index(){
-        $movies = Movie::all();
+        //$movies = Movie::all();
+        $movies = Movie::orderBy('created_at','DESC')->get();
         return view ('movies.index', ['movies'=>$movies]);
     }
     public function show($id){
@@ -28,8 +29,9 @@ class MoviesController extends Controller
              Movie::VALIDATION_RULES
             );
 
-        Movie::create(request()->all());
-        return redirect('/movies');
+        $movie = Movie::create(request()->all());
+        //return redirect('/movies');
+        return view('movies.show', ['movie'=>$movie]);
         
     }
 }
